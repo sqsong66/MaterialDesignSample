@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_store"
+        android:enabled="true"
+        android:icon="@mipmap/ic_shop_white_24dp"
+        android:title="Store"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_music"
+        android:enabled="true"
+        android:icon="@mipmap/ic_music_note_white_24dp"
+        android:title="Music"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_book"
+        android:enabled="true"
+        android:icon="@mipmap/ic_book_white_24dp"
+        android:title="Book"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_news"
+        android:enabled="true"
+        android:icon="@mipmap/ic_receipt_white_24dp"
+        android:title="News"
+        app:showAsAction="ifRoom" />
+
+</menu>

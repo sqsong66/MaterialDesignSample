@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Sample</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="ipsum">There are a few key points within the layout file that you need to be aware of. To use the bottom sheets widget, you must use a CoordinatorLayout container for the views. Towards the bottom of the file, you notice that there is a NestedScrollView containing a TextView. While any container view can be used in a bottom sheet, scrolling can only properly occur if you use a container that supports nested scrolling, such as the NestedScrollView or a RecyclerView.  For a container to be recognized by the Design support library as a bottom sheet container, you need to include the layout_behavior attribute and give it a value of android.support.design.widget.BottomSheetBehavior. You can see this used above in the NestedScrollView.</string>
+</resources>
