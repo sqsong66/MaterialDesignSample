@@ -7,10 +7,10 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.sqsong.sample.ui.BaseActivity;
 import com.sqsong.sample.ui.fragment.BaseFragment;
@@ -57,7 +57,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
 
     @Override
     protected void initView() {
-
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
     }
 
     @Override
@@ -107,18 +107,22 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     private void hideSearchBar() {
         AnimatorSet set = new AnimatorSet();
         ObjectAnimator scaleY = ObjectAnimator.ofFloat(mSearchBar, "scaleY", 1, 0);
-        ObjectAnimator scaleX = ObjectAnimator.ofFloat(mSearchBar, "scaleX", 1, 0);
-        set.playTogether(scaleX, scaleY);
-        set.setDuration(300).start();
+        ObjectAnimator alpha = ObjectAnimator.ofFloat(mSearchBar, "alpha", 1, 0);
+        mSearchBar.setPivotY(0);
+//        ObjectAnimator scaleX = ObjectAnimator.ofFloat(mSearchBar, "scaleX", 1, 0);
+        set.playTogether(/*scaleX,*/alpha,  scaleY);
+        set.setDuration(100).start();
         isSearchBarShown = false;
     }
 
     private void showSearchBar() {
         AnimatorSet set = new AnimatorSet();
         ObjectAnimator scaleY = ObjectAnimator.ofFloat(mSearchBar, "scaleY", 0, 1);
-        ObjectAnimator scaleX = ObjectAnimator.ofFloat(mSearchBar, "scaleX", 0, 1);
-        set.playTogether(scaleX, scaleY);
-        set.setDuration(300).start();
+        ObjectAnimator alpha = ObjectAnimator.ofFloat(mSearchBar, "alpha", 0, 1);
+        mSearchBar.setPivotY(0);
+//        ObjectAnimator scaleX = ObjectAnimator.ofFloat(mSearchBar, "scaleX", 0, 1);
+        set.playTogether(/*scaleX, */alpha, scaleY);
+        set.setDuration(100).start();
         isSearchBarShown = true;
     }
 
@@ -166,7 +170,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     }
 
     @Override
-    public void onRecyclerViewScrolled(RecyclerView view, int dx, int dy) {
+    public void onRecyclerViewScrolled(View view, int dx, int dy) {
         Log.i("sqsong", "dy -- > " + dy);
         if (dy > 0 && Math.abs(dy) > 20 && !isOutAnim) {
             ObjectAnimator.ofFloat(mSearchBar, "translationY", 0, -mSearchBarScrollHeight).setDuration(500).start();

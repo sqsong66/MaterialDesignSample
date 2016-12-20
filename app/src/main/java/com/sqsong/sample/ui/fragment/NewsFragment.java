@@ -8,6 +8,8 @@ import com.sqsong.sample.R;
 
 public class NewsFragment extends BaseFragment {
 
+    /*https://newsapi.org/#documentation*/
+
     @Override
     protected int getResourceId() {
         return R.layout.fragment_news;

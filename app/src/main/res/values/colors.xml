@@ -23,4 +23,6 @@
     <color name="colorTextMessage">#898989</color>
     <color name="colorTextBtn">#8C6869</color>
     <color name="colorLine">#EFEDED</color>
+
+    <color name="colorMore">#4A5D64</color>
 </resources>

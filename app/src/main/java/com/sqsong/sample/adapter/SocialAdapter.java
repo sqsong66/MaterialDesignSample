@@ -18,12 +18,13 @@ import com.sqsong.sample.util.Util;
 
 public class SocialAdapter extends RecyclerView.Adapter<SocialAdapter.SocialHolder> {
 
-    static int[] mIcons = {R.mipmap.ic_snapchat, R.mipmap.ic_google_plus, R.mipmap.ic_facebook, R.mipmap.ic_twitter, R.mipmap.ic_instagram,
+    public static int[] mIcons = {R.mipmap.ic_snapchat, R.mipmap.ic_google_plus, R.mipmap.ic_facebook, R.mipmap.ic_twitter, R.mipmap.ic_instagram,
                            R.mipmap.ic_hangout, R.mipmap.ic_whatsapp, R.mipmap.ic_qq, R.mipmap.ic_weibo};
-    static String[] mNames = {"Snapchat", "Google+", "Facebook", "Twitter", "Instagram", "Hangout", "WhatsApp", "QQ", "Weibo"};
+    public static String[] mNames = {"Snapchat", "Google+", "Facebook", "Twitter", "Instagram", "Hangout", "WhatsApp", "QQ", "Weibo"};
 
     private Context mContext;
     private LayoutInflater mInflater;
+    private OnRecyclerItemClickListener mListener;
 
     public SocialAdapter(Context context) {
         this.mContext = context;
@@ -38,7 +39,7 @@ public class SocialAdapter extends RecyclerView.Adapter<SocialAdapter.SocialHold
 
     @Override
     public void onBindViewHolder(SocialHolder holder, int position) {
-        int size = Util.dip2px(48);
+        int size = Util.dip2px(56);
         Glide.with(mContext).load(mIcons[position]).override(size, size).into(holder.icon);
 //        holder.icon.setImageResource(mIcons[position]);
         holder.name.setText(mNames[position]);
@@ -47,6 +48,10 @@ public class SocialAdapter extends RecyclerView.Adapter<SocialAdapter.SocialHold
     @Override
     public int getItemCount() {
         return mIcons.length;
+    }
+
+    public void setOnRecyclerItemClickListener(OnRecyclerItemClickListener listener) {
+        this.mListener = listener;
     }
 
     class SocialHolder extends RecyclerView.ViewHolder {
@@ -58,6 +63,14 @@ public class SocialAdapter extends RecyclerView.Adapter<SocialAdapter.SocialHold
             super(itemView);
             icon = (ImageView) itemView.findViewById(R.id.icon);
             name = (TextView) itemView.findViewById(R.id.name);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mListener != null) {
+                        mListener.onItemClicked(view, getAdapterPosition());
+                    }
+                }
+            });
         }
     }
 

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="music_new_bg">
+        <item>http://www.hdwallpapers.in/thumbs/2015/alamanos_beach-t2.jpg</item>
+        <item>http://www.hdwallpapers.in/thumbs/2016/french_alps_4k-t2.jpg</item>
+        <item>http://www.hdwallpapers.in/thumbs/2016/isoba_castilla_y_leon_spain-t2.jpg</item>
+        <item>http://www.hdwallpapers.in/thumbs/2016/lago_lungo_torre_pellice_piedmont_italy-t2.jpg</item>
+    </string-array>
+
+    <string-array name="music_new_title">
+        <item>Don\'t Mind</item>
+        <item>Say You Won\'t Let Go</item>
+        <item>Mercy</item>
+        <item>Bounce Back</item>
+    </string-array>
+
+    <string-array name="music_new_author">
+        <item>Kent Jones</item>
+        <item>James Arthur</item>
+        <item>Shawn Mendes</item>
+        <item>Big Sean</item>
+    </string-array>
+
+    <string-array name="music_recommend_bg">
+        <item>http://www.hdwallpapers.in/thumbs/2016/foxtail_barley_5k-t2.jpg</item>
+        <item>http://www.hdwallpapers.in/thumbs/2016/rocky_shore_sunset_5k-t2.jpg</item>
+        <item>http://www.hdwallpapers.in/thumbs/2016/maroon_bells_peaks_colorado_5k-t2.jpg</item>
+        <item>http://www.hdwallpapers.in/thumbs/2016/bossons_glacier_alps_snow_mountains-t2.jpg</item>
+        <item>http://www.hdwallpapers.in/thumbs/2016/heart_reef_great_barrier_reef-t2.jpg</item>
+        <item>http://www.hdwallpapers.in/thumbs/2016/sunrise_forest_mountains-t2.jpg</item>
+        <item>http://www.hdwallpapers.in/thumbs/2016/beautiful_lake_sunset-t2.jpg</item>
+        <item>http://www.hdwallpapers.in/thumbs/2016/nature_call-t2.jpg</item>
+        <item>http://www.hdwallpapers.in/thumbs/2016/steps_deep_forest-t2.jpg</item>
+        <item>http://www.hdwallpapers.in/thumbs/2016/snowy_traffic_trail_lights-t2.jpg</item>
+        <item>http://www.hdwallpapers.in/thumbs/2016/palombaggia_beach_sunny-t2.jpg</item>
+        <item>http://www.hdwallpapers.in/thumbs/2016/snow_cherry_leaves-t2.jpg</item>
+    </string-array>
+
+    <string-array name="music_recommend_title">
+        <item>Sexual</item>
+        <item>All I Want For Christmas Is You</item>
+        <item>Shout Out To My Ex</item>
+        <item>Human</item>
+        <item>Fake Love</item>
+        <item>So Good</item>
+        <item>24K Magic</item>
+        <item>Unsteady</item>
+        <item>Love Me Now</item>
+        <item>Blue Ain\'t Your Color</item>
+        <item>All Time Low</item>
+        <item>Jingle Bell Rock</item>
+    </string-array>
+
+    <string-array name="music_recommend_author">
+        <item>NEIKED Featuring Dyo</item>
+        <item>Mariah Carey</item>
+        <item>Little Mix</item>
+        <item>Rag\'n\'Bone Man</item>
+        <item>Drake</item>
+        <item>Louisa Johnson</item>
+        <item>Bruno Mars</item>
+        <item>X Ambassadors</item>
+        <item>John Legend</item>
+        <item>Keith Urban</item>
+        <item>Jon Bellion</item>
+        <item>Bobby Helms</item>
+    </string-array>
+</resources>
