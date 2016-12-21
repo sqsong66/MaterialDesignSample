@@ -56,7 +56,7 @@ public class MusicFragment extends BaseFragment {
             @Override
             public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
                 if (mListener != null) {
-                    mListener.onRecyclerViewScrolled(v, scrollX - oldScrollX, scrollY - oldScrollY);
+                    mListener.onViewScrolled(scrollY - oldScrollY, null, 0);
                 }
             }
         });

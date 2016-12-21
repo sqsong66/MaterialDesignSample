@@ -39,7 +39,7 @@ public class StoreFragment extends BaseFragment {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 if (mListener != null) {
-                    mListener.onRecyclerViewScrolled(recyclerView, dx, dy);
+                    mListener.onViewScrolled(dy, null, 0);
                 }
             }
         });
@@ -47,7 +47,7 @@ public class StoreFragment extends BaseFragment {
 
     @Override
     protected void loadData() {
-        List<StoreData> storeData = Constant.getStoreData();
+        List<StoreData> storeData = Constant.getStoreData(getContext());
         mDataList.clear();
         mDataList.addAll(storeData);
         mStoreAdapter.notifyDataSetChanged();

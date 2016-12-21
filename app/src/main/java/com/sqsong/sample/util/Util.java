@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.text.TextUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -33,8 +34,13 @@ public class Util {
     }
 
     public static String getNormalFormatTime(String t) {
-        String time = "";
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+        // 2016-12-21T03:39:20Z
+        String time = "None";
+        if (TextUtils.isEmpty(t)) {
+            return time;
+        }
+
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
         try {
             Date date = format.parse(t);
             format.applyPattern("yyyy-MM-dd"); // MM/dd/yyyy HH:mm aaa

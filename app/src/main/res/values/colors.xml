@@ -25,4 +25,5 @@
     <color name="colorLine">#EFEDED</color>
 
     <color name="colorMore">#4A5D64</color>
+    <color name="colorToolbarIcon">#696969</color>
 </resources>

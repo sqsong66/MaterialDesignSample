@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/news_cnn"
+        android:enabled="true"
+        android:title="CNN"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/news_abc"
+        android:enabled="true"
+        android:title="ABC"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/news_bbc"
+        android:enabled="true"
+        android:title="BBC"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/news_cnbc"
+        android:enabled="true"
+        android:title="CNBC"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/news_google"
+        android:enabled="true"
+        android:title="GOOGLE"
+        app:showAsAction="never" />
+</menu>

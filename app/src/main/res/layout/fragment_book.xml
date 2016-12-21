@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:paddingBottom="55dp"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
     tools:context="com.sqsong.sample.ui.fragment.BaseFragment">
@@ -62,6 +63,7 @@
         android:id="@+id/bottom_sheet"
         android:layout_width="match_parent"
         android:layout_height="250dp"
+        android:layout_marginBottom="50dp"
         android:background="@android:color/holo_green_light"
         app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
 

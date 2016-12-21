@@ -170,16 +170,22 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     }
 
     @Override
-    public void onRecyclerViewScrolled(View view, int dx, int dy) {
+    public void onViewScrolled(int dy, View animateView, int animateDistance) {
         Log.i("sqsong", "dy -- > " + dy);
         if (dy > 0 && Math.abs(dy) > 20 && !isOutAnim) {
             ObjectAnimator.ofFloat(mSearchBar, "translationY", 0, -mSearchBarScrollHeight).setDuration(500).start();
             ObjectAnimator.ofFloat(mBottomNavigationView, "translationY", 0, mBottomViewScrollHeight).setDuration(500).start();
+            if (animateView != null && animateDistance > 0) {
+                ObjectAnimator.ofFloat(animateView, "translationY", 0, -animateDistance).setDuration(500).start();
+            }
             isOutAnim = true;
             isInAnim = false;
         } else if (dy < 0 && Math.abs(dy) > 20 && !isInAnim) {
             ObjectAnimator.ofFloat(mSearchBar, "translationY", -mSearchBarScrollHeight, 0).setDuration(500).start();
             ObjectAnimator.ofFloat(mBottomNavigationView, "translationY", mBottomViewScrollHeight, 0).setDuration(500).start();
+            if (animateView != null && animateDistance > 0) {
+                ObjectAnimator.ofFloat(animateView, "translationY", -animateDistance, 0).setDuration(500).start();
+            }
             isInAnim = true;
             isOutAnim = false;
         }

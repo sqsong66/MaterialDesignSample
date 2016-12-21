@@ -46,7 +46,7 @@ public abstract class BaseFragment extends Fragment {
     protected abstract void loadData();
 
     public interface OnFragmentInteractionListener {
-        void onRecyclerViewScrolled(View view, int dx, int dy);
+        void onViewScrolled(int dy, View animateView, int animateDistance);
     }
 
 }

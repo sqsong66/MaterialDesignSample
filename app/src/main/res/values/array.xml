@@ -1,27 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Shop Data -->
+    <string-array name="shop_bg">
+        <item>http://cdn.wallpapersafari.com/2/46/HtkBcG.jpg</item>
+        <item>http://mobilehdwalls.com/wp-content/uploads/2016/04/blackberries-pear-plate-food-1080x1920-394x700.jpg</item>
+        <item>http://www.winwallpapers.net/w1/2015/02/Apple-Tree-iPhone-6-Plus.jpg</item>
+        <item>http://www.winwallpapers.net/w1/2014/05/parrot-1080x1920.jpg</item>
+        <item>http://androidwallpaper.org/wp-content/uploads/2015/09/wallpaper-for-android-phones-Flowers-1080x1920-Beautiful-tulips-flowers-wallpaper-pictures.jpg</item>
+        <item>https://4.bp.blogspot.com/-hILSLVvX4ZU/VmiIdhBwWbI/AAAAAAAB6V0/nbdIqMz36FU/s0/Merry_Christmas2_2015_sm.jpg</item>
+        <item>http://www.samsung-wallpapers.com/uploads/allimg/130702/1-130F2224021.jpg</item>
+        <item>http://www.5djpg.com/uploads/allimg/160809/1-160P91Q215.jpg</item>
+        <item>http://hdwallpaperbackgrounds.net/wp-content/uploads/2015/07/Top-HD-Wallpapers-1080x1920-8.jpg</item>
+        <item>http://androidwallpaper.org/wp-content/uploads/2015/09/wallpaper-for-android-phones-Flowers-1080x1920-beautiful-purple-colour-flower.jpg</item>
+        <item>http://www.wowhdbackgrounds.com/wp-content/uploads/2016/11/HD-Wallpapers-1080x1920-1.jpg</item>
+    </string-array>
+
+    <string-array name="shop_title">
+        <item>Room of Plates</item>
+        <item>The Sleek Boot</item>
+        <item>Night Hunting</item>
+        <item>Rain and Coffee</item>
+        <item>Ocean View</item>
+        <item>Lovers on the Roof</item>
+        <item>Lessons from Delhi</item>
+        <item>Mountaineers</item>
+        <item>Plains in the night</item>
+        <item>Dear Olivia</item>
+        <item>Driving Lessons</item>
+    </string-array>
+
+    <string-array name="shop_author">
+        <item>Ali Conners</item>
+        <item>Sandra Adams</item>
+        <item>Janet Perkins</item>
+        <item>Peter Carlsson</item>
+        <item>Trevor Hansen</item>
+        <item>Britta Holt</item>
+        <item>Mary Johnson</item>
+        <item>Abbey Christensen</item>
+        <item>David Park</item>
+        <item>Sylvia Sorensen</item>
+        <item>Halime Carver</item>
+    </string-array>
+
+    <!-- New Release Music Data -->
     <string-array name="music_new_bg">
         <item>http://www.hdwallpapers.in/thumbs/2015/alamanos_beach-t2.jpg</item>
         <item>http://www.hdwallpapers.in/thumbs/2016/french_alps_4k-t2.jpg</item>
-        <item>http://www.hdwallpapers.in/thumbs/2016/isoba_castilla_y_leon_spain-t2.jpg</item>
-        <item>http://www.hdwallpapers.in/thumbs/2016/lago_lungo_torre_pellice_piedmont_italy-t2.jpg</item>
+        <!--<item>http://www.hdwallpapers.in/thumbs/2016/isoba_castilla_y_leon_spain-t2.jpg</item>
+        <item>http://www.hdwallpapers.in/thumbs/2016/lago_lungo_torre_pellice_piedmont_italy-t2.jpg</item>-->
     </string-array>
 
     <string-array name="music_new_title">
         <item>Don\'t Mind</item>
         <item>Say You Won\'t Let Go</item>
-        <item>Mercy</item>
-        <item>Bounce Back</item>
+        <!--<item>Mercy</item>
+        <item>Bounce Back</item>-->
     </string-array>
 
     <string-array name="music_new_author">
         <item>Kent Jones</item>
         <item>James Arthur</item>
-        <item>Shawn Mendes</item>
-        <item>Big Sean</item>
+        <!--<item>Shawn Mendes</item>
+        <item>Big Sean</item>-->
     </string-array>
 
+    <!-- Recommend Music Data -->
     <string-array name="music_recommend_bg">
         <item>http://www.hdwallpapers.in/thumbs/2016/foxtail_barley_5k-t2.jpg</item>
         <item>http://www.hdwallpapers.in/thumbs/2016/rocky_shore_sunset_5k-t2.jpg</item>
