@@ -16,6 +16,8 @@ public class Constant {
 
     public static final String API_KEY = "8ad83ccdafef418cae17472e75b18ea2";
 
+    public static final int ANIMATION_DUARATION = 300;
+
     public static List<StoreData> getStoreData(Context context) {
         String[] images = context.getResources().getStringArray(R.array.shop_bg);
         String[] titles = context.getResources().getStringArray(R.array.shop_title);

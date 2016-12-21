@@ -47,6 +47,7 @@ public class NewsFragment extends BaseFragment implements SwipeRefreshLayout.OnR
     private String mCurNewsCat = "cnn";
     private NewsRecyclerAdapter mNewsAdapter;
     private List<ArticleData> mArticleLists = new ArrayList<>();
+    private PopupMenu mPopupMenu;
 
     @Override
     protected int getResourceId() {
@@ -102,41 +103,43 @@ public class NewsFragment extends BaseFragment implements SwipeRefreshLayout.OnR
     }
 
     private void showNewsCategoryMenu() {
-        PopupMenu popupMenu = new PopupMenu(getContext(), mToolbar, Gravity.END);
-        popupMenu.getMenuInflater().inflate(R.menu.news_category_menu, popupMenu.getMenu());
-        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.news_cnn:
-                        mCurNewsCat = "cnn";
-                        mToolbar.setTitle("CNN NEWS");
-                        break;
-                    case R.id.news_abc:
-                        mCurNewsCat = "abc-news-au";
-                        mToolbar.setTitle("ABC NEWS");
-                        break;
-                    case R.id.news_bbc:
-                        mCurNewsCat = "bbc-news";
-                        mToolbar.setTitle("BBC NEWS");
-                        break;
-                    case R.id.news_cnbc:
-                        mCurNewsCat = "cnbc";
-                        mToolbar.setTitle("CNBC NEWS");
-                        break;
-                    case R.id.news_google:
-                        mCurNewsCat = "google-news";
-                        mToolbar.setTitle("GOOGLE NEWS");
-                        break;
+        if (mPopupMenu == null) {
+            mPopupMenu = new PopupMenu(getContext(), mToolbar, Gravity.END);
+            mPopupMenu.getMenuInflater().inflate(R.menu.news_category_menu, mPopupMenu.getMenu());
+            mPopupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem item) {
+                    switch (item.getItemId()) {
+                        case R.id.news_cnn:
+                            mCurNewsCat = "cnn";
+                            mToolbar.setTitle("CNN NEWS");
+                            break;
+                        case R.id.news_abc:
+                            mCurNewsCat = "abc-news-au";
+                            mToolbar.setTitle("ABC NEWS");
+                            break;
+                        case R.id.news_bbc:
+                            mCurNewsCat = "bbc-news";
+                            mToolbar.setTitle("BBC NEWS");
+                            break;
+                        case R.id.news_cnbc:
+                            mCurNewsCat = "cnbc";
+                            mToolbar.setTitle("CNBC NEWS");
+                            break;
+                        case R.id.news_google:
+                            mCurNewsCat = "google-news";
+                            mToolbar.setTitle("GOOGLE NEWS");
+                            break;
+                    }
+                    mArticleLists.clear();
+                    mNewsAdapter.notifyDataSetChanged();
+                    mSwipeLayout.setRefreshing(true);
+                    loadData();
+                    return false;
                 }
-                mArticleLists.clear();
-                mNewsAdapter.notifyDataSetChanged();
-                mSwipeLayout.setRefreshing(true);
-                loadData();
-                return false;
-            }
-        });
-        popupMenu.show();
+            });
+        }
+        mPopupMenu.show();
     }
 
     @Override
