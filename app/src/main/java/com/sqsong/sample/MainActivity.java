@@ -32,9 +32,6 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     @BindView(R.id.search_bar)
     CardView mSearchBar;
 
-    @BindView(R.id.content)
-    View mContent;
-
     @BindView(R.id.bottom_view)
     BottomNavigationView mBottomNavigationView;
 
@@ -110,8 +107,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         ObjectAnimator scaleY = ObjectAnimator.ofFloat(mSearchBar, "scaleY", 1, 0);
         ObjectAnimator alpha = ObjectAnimator.ofFloat(mSearchBar, "alpha", 1, 0);
         mSearchBar.setPivotY(0);
-//        ObjectAnimator scaleX = ObjectAnimator.ofFloat(mSearchBar, "scaleX", 1, 0);
-        set.playTogether(/*scaleX,*/alpha,  scaleY);
+        set.playTogether(alpha,  scaleY);
         set.setDuration(100).start();
         isSearchBarShown = false;
     }
@@ -121,8 +117,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         ObjectAnimator scaleY = ObjectAnimator.ofFloat(mSearchBar, "scaleY", 0, 1);
         ObjectAnimator alpha = ObjectAnimator.ofFloat(mSearchBar, "alpha", 0, 1);
         mSearchBar.setPivotY(0);
-//        ObjectAnimator scaleX = ObjectAnimator.ofFloat(mSearchBar, "scaleX", 0, 1);
-        set.playTogether(/*scaleX, */alpha, scaleY);
+        set.playTogether(alpha, scaleY);
         set.setDuration(100).start();
         isSearchBarShown = true;
     }

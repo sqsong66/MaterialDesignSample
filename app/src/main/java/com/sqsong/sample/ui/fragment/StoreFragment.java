@@ -16,7 +16,6 @@ import butterknife.BindView;
 /**
  * Created by 青松 on 2016/12/14.
  */
-
 public class StoreFragment extends BaseFragment {
 
     @BindView(R.id.recycler_view)

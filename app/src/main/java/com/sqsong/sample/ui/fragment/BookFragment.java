@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import com.sqsong.sample.R;
 import com.sqsong.sample.ui.NewActivity;
+import com.sqsong.sample.ui.SampleActivity;
 
 import butterknife.BindView;
 
@@ -27,6 +28,9 @@ public class BookFragment extends BaseFragment implements View.OnClickListener {
     @BindView(R.id.new_activity_btn)
     Button mNewActivityBtn;
 
+    @BindView(R.id.sample_btn)
+    Button mSampleBtn;
+
     @BindView(R.id.bottom_sheet)
     View mBottomView;
     private BottomSheetBehavior mSheetBehavior;
@@ -42,6 +46,7 @@ public class BookFragment extends BaseFragment implements View.OnClickListener {
         mHideSheetBtn.setOnClickListener(this);
         mModalSheetBtn.setOnClickListener(this);
         mNewActivityBtn.setOnClickListener(this);
+        mSampleBtn.setOnClickListener(this);
 
         mSheetBehavior = BottomSheetBehavior.from(mBottomView);
         mSheetBehavior.setHideable(true);
@@ -75,6 +80,9 @@ public class BookFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case R.id.new_activity_btn:
                 startActivity(new Intent(getContext(), NewActivity.class));
+                break;
+            case R.id.sample_btn:
+                startActivity(new Intent(getContext(), SampleActivity.class));
                 break;
         }
     }
