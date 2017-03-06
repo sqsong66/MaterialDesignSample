@@ -68,6 +68,11 @@
         <activity
             android:name=".ui.DownloadFileActivity"
             android:label="@string/title_activity_download_file"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".ui.ShowPopActivity" />
+        <activity
+            android:name=".video.VideoPlayerActivity"
+            android:label="@string/title_activity_music_player"
             android:theme="@style/AppTheme"></activity>
     </application>
 

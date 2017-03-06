@@ -2,7 +2,6 @@ package com.sqsong.sample.util;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.os.Environment;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -16,27 +15,21 @@ import java.net.URLConnection;
  * Created by 青松 on 2017/1/3.
  */
 
-public class DownloadTask extends AsyncTask<String, Integer, Boolean> {
+public class DownloadTask extends AsyncTask<String, Long, Boolean> {
 
     public interface DownloadListener {
-        void downloadPrepare();
-        void downloadProgress(int progress);
+        void downloadPrepare(long fileLength);
+        void downloadProgress(long percent, long totalLength);
         void downloadFinish(boolean success);
     }
 
+    private int totalLength;
     private Context context;
     private DownloadListener listener;
 
     public DownloadTask(Context context, DownloadListener listener) {
         this.context = context;
         this.listener = listener;
-    }
-
-    @Override
-    protected void onPreExecute() {
-        if (listener != null) {
-            listener.downloadPrepare();
-        }
     }
 
     @Override
@@ -47,10 +40,13 @@ public class DownloadTask extends AsyncTask<String, Integer, Boolean> {
             URL url = new URL(downloadUrl[0]);
             URLConnection conn = url.openConnection();
             conn.connect();
-            int totalLength = conn.getContentLength();
+            totalLength = conn.getContentLength();
+            if (listener != null) {
+                listener.downloadPrepare(totalLength);
+            }
             inputStream = new BufferedInputStream(conn.getInputStream(), 1024 * 8);
             String fileName = downloadUrl[0].substring(downloadUrl[0].lastIndexOf("/") + 1).replace("+", "");
-            File file = new File(getStoreDir(context));
+            File file = new File(Util.getStoreDir(context));
             if (!file.exists()) {
                 file.mkdir();
             }
@@ -61,7 +57,7 @@ public class DownloadTask extends AsyncTask<String, Integer, Boolean> {
             long total = 0;
             while ((count = inputStream.read(data)) != -1) {
                 total += count;
-                publishProgress((int)total * 100 / totalLength);
+                publishProgress(total);
 
                 outputStream.write(data, 0, count);
                 outputStream.flush();
@@ -85,9 +81,10 @@ public class DownloadTask extends AsyncTask<String, Integer, Boolean> {
     }
 
     @Override
-    protected void onProgressUpdate(Integer... values) {
+    protected void onProgressUpdate(Long... values) {
         if (listener != null) {
-            listener.downloadProgress(values[0]);
+            int percent = (int)(values[0] * 100 / totalLength);
+            listener.downloadProgress(percent, values[0]);
         }
     }
 
@@ -96,13 +93,6 @@ public class DownloadTask extends AsyncTask<String, Integer, Boolean> {
         if (listener != null) {
             listener.downloadFinish(b);
         }
-    }
-
-    public String getStoreDir(Context context) {
-        String childPath = "/download";
-        String externalDir = context.getExternalCacheDir().getPath() + childPath;
-        String internalDir = context.getCacheDir().getPath() + childPath;
-        return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED) ? externalDir : internalDir;
     }
 
 }

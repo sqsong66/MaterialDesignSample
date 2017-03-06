@@ -168,6 +168,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     @Override
     public void onViewScrolled(int dy, View animateView, int animateDistance) {
         Log.i("sqsong", "dy -- > " + dy);
+
         if (dy > 0 && Math.abs(dy) > 20 && !isOutAnim) {
             ObjectAnimator.ofFloat(mSearchBar, "translationY", 0, -mSearchBarScrollHeight).setDuration(Constant.ANIMATION_DUARATION).start();
             ObjectAnimator.ofFloat(mBottomNavigationView, "translationY", 0, mBottomViewScrollHeight).setDuration(Constant.ANIMATION_DUARATION).start();

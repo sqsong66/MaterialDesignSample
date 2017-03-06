@@ -25,8 +25,8 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:progressDrawable="@drawable/progressbar_drawable"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:progressDrawable="@drawable/progressbar_drawable" />
 
     <TextView
         android:id="@+id/download_tv"
@@ -38,5 +38,57 @@
         android:padding="10dp"
         android:text="Download File"
         android:textColor="@color/colorWhite" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/percent_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/progress_text" />
+
+        <ProgressBar
+            android:id="@+id/okhttp_progressbar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginTop="10dp"
+            android:progressDrawable="@drawable/progressbar_drawable" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/start_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ripple_btn"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Start"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                android:id="@+id/stop_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ripple_btn"
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_marginLeft="20dp"
+                android:text="Stop"
+                android:textColor="@color/colorWhite" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </LinearLayout>

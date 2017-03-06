@@ -14,44 +14,90 @@
     tools:context="com.sqsong.sample.ui.SampleActivity"
     tools:showIn="@layout/activity_sample">
 
-    <TextView
-        android:id="@+id/download_tv"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/ripple_btn"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="Download Activity"
-        android:textColor="@color/colorWhite" />
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/jump_market_tv"
-        android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/change_icon_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Icon" />
+
+        <Button
+            android:id="@+id/notification_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notification" />
+
+        <Button
+            android:id="@+id/vector_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vector" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/ripple_btn"
-        android:gravity="center"
         android:layout_marginTop="10dp"
-        android:padding="10dp"
-        android:text="Jump To App Store"
-        android:textColor="@color/colorWhite" />
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/change_icon_btn"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/download_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_btn"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Download Activity"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/jump_market_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/ripple_btn"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="App Store"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/show_pop_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/ripple_btn"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Show Pop"
+            android:textColor="@color/colorWhite" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Change Application Icon" />
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/notification_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Notification Activity" />
+        <TextView
+            android:id="@+id/play_music_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_btn"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Play Music"
+            android:textColor="@color/colorWhite" />
 
-    <Button
-        android:id="@+id/vector_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Vector Activity" />
+    </LinearLayout>
+
 
 </LinearLayout>

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Environment;
 import android.text.TextUtils;
 
 import java.text.ParseException;
@@ -82,6 +83,13 @@ public class Util {
             result = context.getResources().getDimensionPixelSize(resourceId);
         }
         return result;
+    }
+
+    public static String getStoreDir(Context context) {
+        String childPath = "/download";
+        String externalDir = context.getExternalCacheDir().getPath() + childPath;
+        String internalDir = context.getCacheDir().getPath() + childPath;
+        return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED) ? externalDir : internalDir;
     }
 
 }

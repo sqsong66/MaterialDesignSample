@@ -9,4 +9,5 @@
     <string name="title_activity_vector">VectorActivity</string>
     <string name="title_activity_download_file">DownloadFileActivity</string>
     <string name="progress_text">progress: %d%%</string>
+    <string name="title_activity_music_player">MusicPlayerActivity</string>
 </resources>

@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.sqsong.sample.R;
+import com.sqsong.sample.video.VideoPlayerActivity;
 import com.sqsong.sample.ui.fragment.VectorActivity;
 
 import butterknife.BindView;
@@ -22,6 +23,12 @@ public class SampleActivity extends BaseActivity implements View.OnClickListener
 
     @BindView(R.id.jump_market_tv)
     TextView mMarketTv;
+
+    @BindView(R.id.show_pop_tv)
+    TextView mPopTv;
+
+    @BindView(R.id.play_music_tv)
+    TextView mPlayMusicTv;
 
     @BindView(R.id.change_icon_btn)
     Button mChangeIconBtn;
@@ -43,6 +50,8 @@ public class SampleActivity extends BaseActivity implements View.OnClickListener
 
         mDownloadTv.setOnClickListener(this);
         mMarketTv.setOnClickListener(this);
+        mPopTv.setOnClickListener(this);
+        mPlayMusicTv.setOnClickListener(this);
         mChangeIconBtn.setOnClickListener(this);
         mNotificationBtn.setOnClickListener(this);
         mVectorBtn.setOnClickListener(this);
@@ -56,6 +65,12 @@ public class SampleActivity extends BaseActivity implements View.OnClickListener
                 break;
             case R.id.jump_market_tv:
                 jumpToMarket();
+                break;
+            case R.id.show_pop_tv:
+                startActivity(new Intent(this, ShowPopActivity.class));
+                break;
+            case R.id.play_music_tv:
+                startActivity(new Intent(this, VideoPlayerActivity.class));
                 break;
             case R.id.change_icon_btn:
                 changeApplicationIcon();

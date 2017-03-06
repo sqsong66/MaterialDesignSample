@@ -13,9 +13,6 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
-        maven {
-            url 'https://songe.bintray.com/maven'
-        }
     }
 }
 

@@ -26,4 +26,7 @@
 
     <color name="colorMore">#4A5D64</color>
     <color name="colorToolbarIcon">#696969</color>
+    <color name="colorMiddleTransparent">#55000000</color>
+
+    <color name="colorNormalSeekbar">#F1F1F1</color>
 </resources>

@@ -98,6 +98,7 @@ public class NewsFragment extends BaseFragment implements SwipeRefreshLayout.OnR
             showNewsCategoryMenu();
         } else if (item.getItemId() == android.R.id.home){
             Toast.makeText(getContext(), "Menu", Toast.LENGTH_SHORT).show();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -147,6 +148,12 @@ public class NewsFragment extends BaseFragment implements SwipeRefreshLayout.OnR
         RetrofitInstance.getInstance().getArtiacleLists(mCurNewsCat, "top")
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+                .doOnError(new Action1<Throwable>() {
+                    @Override
+                    public void call(Throwable throwable) {
+
+                    }
+                })
             .subscribe(new Action1<List<ArticleData>>() {
                 @Override
                 public void call(List<ArticleData> articleDatas) {
